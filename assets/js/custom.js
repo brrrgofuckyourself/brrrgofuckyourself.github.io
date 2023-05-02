@@ -1,3 +1,4 @@
+console.log('\n [                  STRESSE.TECH                  ]\n\n # if you have any questions about functionality, go fuck yourself\n');
 (function($) {
 	"use strict";
 	
