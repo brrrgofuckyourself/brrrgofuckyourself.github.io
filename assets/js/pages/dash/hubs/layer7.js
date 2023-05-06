@@ -75,8 +75,7 @@ function sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, co
                     });
                 } else {
                     if (data.message == "No server is available or online at the moment, please renew your request within minutes.") {
-                        setTimeout(3000);
-                        sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation);
+                        setTimeout(sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation), 3000);
                     } else {
                         new swal({
                             title: "Error!",
