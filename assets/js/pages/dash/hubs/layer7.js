@@ -77,9 +77,7 @@ function sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, co
                     $('.sendAttackButton').attr('style', 'display:inline');
                 } else {
                     if (data.message == "No server is available or online at the moment, please renew your request within minutes." || data.message == "Сейчас сервер недоступен или не находится в сети, пожалуйста, попробуйте еще раз через несколько минут.") {
-                        setTimeout(sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation), 3000);
-                        $('.attackInProgressButton').attr('style', 'display:none');
-                        $('.sendAttackButton').attr('style', 'display:inline');
+                        setTimeout(() => sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation), 3000);
                     } else {
                         new swal({
                             title: "Error!",
