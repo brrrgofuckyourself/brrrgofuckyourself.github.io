@@ -43,6 +43,19 @@ $(document).ready(function() {
         const geolocation = $('.geolocation').val();
         $('.sendAttackButton').attr('style', 'display:none');
         $('.attackInProgressButton').attr('style', 'display:inline');
+        sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation);
+    });
+    setInterval(() => {
+        $.ajax({
+            url: baseUrl + 'dash/hubs/layer7/attacksList',
+            dataType: 'HTML',
+            success: function(data) {
+                $('.attacksList').html(data);
+            }
+        });
+    }, 1000);
+});
+function sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation) {
         $.ajax({
             type: "POST",
             url: baseUrl + 'dash/hubs/layer7/sendAttack',
@@ -61,31 +74,27 @@ $(document).ready(function() {
                         timerProgressBar: true,
                     });
                 } else {
-                    new swal({
-                        title: "Error!",
-                        text: data.message,
-                        icon: "error",
-                        closeOnClickOutside: true,
-                        showConfirmButton: false,
-                        timer: 2000,
-                        timerProgressBar: true,
-                    });
+                    if (data.message == "No server is available or online at the moment, please renew your request within minutes.") {
+                        setTimeout(3000);
+                        sendReqAttack(ipAddress, time, attackMethod, requestType, rateLimit, cookie, postData, geolocation);
+                    } else {
+                        new swal({
+                            title: "Error!",
+                            text: data.message,
+                            icon: "error",
+                            closeOnClickOutside: true,
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                        });
+                    }
                 }
                 $('.attackInProgressButton').attr('style', 'display:none');
                 $('.sendAttackButton').attr('style', 'display:inline');
             },
         });
-    });
-    setInterval(() => {
-        $.ajax({
-            url: baseUrl + 'dash/hubs/layer7/attacksList',
-            dataType: 'HTML',
-            success: function(data) {
-                $('.attacksList').html(data);
-            }
-        });
-    }, 1000);
-});
+}
+
 function stopAttack(attackId) {
     $.ajax({
         type: "POST",
