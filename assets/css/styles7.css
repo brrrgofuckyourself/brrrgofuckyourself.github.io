@@ -2075,7 +2075,7 @@ header.nav .links .btn.link {
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 275px;
+    height: 380px;
     -webkit-perspective: 500px;
     perspective: 500px;
     -webkit-transform-style: preserve-3d;
@@ -2089,7 +2089,7 @@ header.nav .links .btn.link {
 .carousel .carousel-item {
     visibility: hidden;
     width: 731px;
-    height: 275px;
+    height: 380px;
     position: absolute;
     top: 0;
     left: 0;
