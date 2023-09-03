@@ -807,22 +807,11 @@ label {
     position: relative
 }
 
-.has-top-divider::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: block;
-    height: 1px;
-    background: #242830
-}
-
 .has-bottom-divider {
     position: relative
 }
 
-.has-bottom-divider::after {
+.has-bottom-divider {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1406,19 +1395,6 @@ label {
     .site-header {
         position: relative
     }
-
-    .site-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 700px;
-        background: #242830;
-        background: linear-gradient(80deg, rgba(36, 40, 48, 0.5) 0%, rgba(36, 40, 48, 0) 100%);
-        transform-origin: 0;
-        transform: skewY(-12deg)
-    }
 }
 
 .hero {
@@ -1458,21 +1434,6 @@ label {
 .hero-figure-box-08,
 .hero-figure-box-09 {
     overflow: hidden
-}
-
-.hero-figure-box-01::before,
-.hero-figure-box-02::before,
-.hero-figure-box-03::before,
-.hero-figure-box-04::before,
-.hero-figure-box-08::before,
-.hero-figure-box-09::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform-origin: 100% 100%
 }
 
 .hero-figure-box-01 {
@@ -1731,21 +1692,6 @@ label {
     flex-grow: 1
 }
 
-.pricing-table::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 200%;
-    max-width: 200%;
-    height: 435px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    bottom: 18.8%;
-    transform: translateX(-50%);
-    background-image: url("../images/pricing-illustration.svg")
-}
-
 .pricing-table-header,
 .pricing-table-features-title,
 .pricing-table-features li {
@@ -1764,17 +1710,6 @@ label {
 .pricing-table-inner>* {
     position: relative;
     width: 100%
-}
-
-.pricing-table-inner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-shadow: 0 24px 48px rgba(21, 24, 29, 0.24);
-    mix-blend-mode: multiply
 }
 
 .pricing-table-price-currency {
