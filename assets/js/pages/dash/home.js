@@ -7,10 +7,10 @@ $(document).ready(function() {
             headers: {'Content-type': 'application/x-www-form-urlencoded'},
             dataType: "json",
             success: function(data) {
-                $('.registeredUsers').text(data.registeredUsers);
-                $('.attacksToday').text(data.attacksToday);
+                $('.totalUsers').text(data.totalUsers);
+                $('.totalBoots').text(data.totalBoots);
                 $('.runningAttacks').text(data.runningAttacks);
-                $('.totalActivePlans').text(data.totalActivePlans);
+                $('.totalServers').text(data.totalServers);
             }
         });
     }
