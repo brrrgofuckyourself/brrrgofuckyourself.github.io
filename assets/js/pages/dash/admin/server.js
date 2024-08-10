@@ -6,6 +6,7 @@ $(document).ready(function() {
         const apiType = $('.apiType').val();
         const apiStatus = $('.apiStatus').val();
         const apiMethods = $('.apiMethods').val();
+        const stopUrl = $('.stopUrl').val();
         $('.saveServerButton').attr('style', 'display:none');
         $('.saveServerInProgressButton').attr('style', 'display:inline');
         $.ajax({
