@@ -11,7 +11,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: baseUrl + 'dash/admin/servers/serverSettings',
-            data: {serverId: serverId, apiName: apiName, apiUrl: apiUrl , apiType: apiType, apiStatus: apiStatus, apiMethods: apiMethods},
+            data: {serverId: serverId, apiName: apiName, apiUrl: apiUrl, apiType: apiType, apiStatus: apiStatus, apiMethods: apiMethods, stopUrl: stopUrl},
             headers: {'Content-type': 'application/x-www-form-urlencoded'},
             dataType: "json",
             success: function(data) {
